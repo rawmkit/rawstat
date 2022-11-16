@@ -1,42 +1,36 @@
 # This file is a part of dwmblocks.
 # See COPYING and COPYRIGHT files for corresponding information.
 
-PREFIX  := /usr/local
-CC      := cc
-CFLAGS  := -pedantic -Wall -Wno-deprecated-declarations -Os
-LDFLAGS := -lX11
+.POSIX:
 
-# FreeBSD (uncomment)
-#LDFLAGS += -L/usr/local/lib -I/usr/local/include
-# # OpenBSD (uncomment)
-#LDFLAGS += -L/usr/X11R6/lib -I/usr/X11R6/include
+include config.mk
 
-all: options dwmblocks
+all: dwmblocks dwmblocks.1
 
-options:
-	@echo dwmblocks build options:
-	@echo "CFLAGS  = ${CFLAGS}"
-	@echo "LDFLAGS = ${LDFLAGS}"
-	@echo "CC      = ${CC}"
+.c.o:
+	${CC} -c ${CFLAGS} ${CPPFLAGS} $<
 
-dwmblocks: dwmblocks.c blocks.def.h blocks.h
-	${CC} -o dwmblocks dwmblocks.c ${CFLAGS} ${LDFLAGS}
+%: %.in
+	sed "s/VERSION/${VERSION}/g" $^ > $@
 
-blocks.h:
-	cp blocks.def.h $@
+dwmblocks: dwmblocks.o
+	${CC} -o $@ ${LDFLAGS} $^
 
-clean:
-	rm -f *.o *.gch dwmblocks
-
-install: dwmblocks
-	mkdir -p ${DESTDIR}${PREFIX}/bin
-	cp -f dwmblocks ${DESTDIR}${PREFIX}/bin
-	chmod 755 ${DESTDIR}${PREFIX}/bin/dwmblocks
+install: all
+	install -m 0755 -Dt ${DESTDIR}${PREFIX}/bin/      dwmblocks
+	install -m 0644 -Dt ${DESTDIR}${MANPREFIX}/man1/  dwmblocks.1
+	install -m 0755 -Dt ${DESTDIR}${DATAPREFIX}/dwmblocks \
+		scripts/*.sh
 
 uninstall:
-	rm -f ${DESTDIR}${PREFIX}/bin/dwmblocks
+	rm -f  ${DESTDIR}${PREFIX}/bin/dwmblocks
+	rm -f  ${DESTDIR}${MANPREFIX}/man1/dwmblocks.1
+	rm -rf ${DESTDIR}${DATAPREFIX}/dwmblocks
 
-.PHONY: all options clean install uninstall
+clean:
+	rm -f dwmblocks dwmblocks.o dwmblocks.1
+
+.PHONY: all install uninstall clean
 
 # vim:cc=72:tw=70
 # End of file.
