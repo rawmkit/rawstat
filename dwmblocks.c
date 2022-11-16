@@ -6,7 +6,7 @@
 #ifndef NO_X
 #include<X11/Xlib.h>
 #endif
-#ifdef __OpenBSD__
+#if defined(__OpenBSD__) || defined(__DragonFly__)
 #define SIGPLUS			SIGUSR1+1
 #define SIGMINUS		SIGUSR1-1
 #else
@@ -47,8 +47,7 @@ static Window root;
 static void (*writestatus) () = pstdout;
 #endif
 
-
-#include "blocks.h"
+#include "config.h"
 
 static char statusbar[LENGTH(blocks)][CMDLENGTH] = {0};
 static char statusstr[2][STATUSLENGTH];
@@ -102,7 +101,7 @@ void getsigcmds(unsigned int signal)
 
 void setupsignals()
 {
-#ifndef __OpenBSD__
+#if !defined(__OpenBSD__) && !defined(__DragonFly__)
 	    /* initialize all real time signals with dummy handler */
     for (int i = SIGRTMIN; i <= SIGRTMAX; i++)
         signal(i, dummysighandler);
