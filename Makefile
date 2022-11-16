@@ -1,3 +1,6 @@
+# This file is a part of dwmblocks.
+# See COPYING and COPYRIGHT files for corresponding information.
+
 PREFIX  := /usr/local
 CC      := cc
 CFLAGS  := -pedantic -Wall -Wno-deprecated-declarations -Os
@@ -34,3 +37,6 @@ uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/dwmblocks
 
 .PHONY: all options clean install uninstall
+
+# vim:cc=72:tw=70
+# End of file.

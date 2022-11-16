@@ -1,3 +1,6 @@
+/* This file is a part of dwmblocks.
+ * See COPYING and COPYRIGHT files for corresponding information. */
+
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
@@ -210,3 +213,6 @@ int main(int argc, char** argv)
 #endif
 	return 0;
 }
+
+/* vim:cc=72:tw=70
+ * End of file. */
