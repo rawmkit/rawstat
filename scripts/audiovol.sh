@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Display audio volume.
 # See COPYING and COPYRIGHT files for corresponding information.
 
