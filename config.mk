@@ -1,10 +1,9 @@
-# This file is a part of dwmblocks.
 # See COPYING and COPYRIGHT files for corresponding information.
 
 # dwmblocks version
 VERSION = 0.1
 
-# customize below to fit your system
+# Customize below to fit your system.
 
 # paths
 PREFIX = /usr/local

@@ -1,4 +1,3 @@
-# This file is a part of dwmblocks.
 # See COPYING and COPYRIGHT files for corresponding information.
 
 .POSIX:
@@ -7,11 +6,11 @@ include config.mk
 
 all: dwmblocks dwmblocks.1
 
-.c.o:
-	${CC} -c ${CFLAGS} ${CPPFLAGS} $<
-
 %: %.in
 	sed "s/VERSION/${VERSION}/g" $^ > $@
+
+.c.o:
+	${CC} -c ${CFLAGS} ${CPPFLAGS} $<
 
 dwmblocks: dwmblocks.o
 	${CC} -o $@ ${LDFLAGS} $^

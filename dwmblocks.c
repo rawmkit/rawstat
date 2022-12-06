@@ -1,5 +1,4 @@
-/* This file is a part of dwmblocks.
- * See COPYING and COPYRIGHT files for corresponding information. */
+// See COPYING and COPYRIGHT files for corresponding information.
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -61,9 +60,9 @@ static char statusstr[2][STATUSLENGTH];
 static int statusContinue = 1;
 static int returnStatus = 0;
 
-/*
- * Opens process *cmd and stores output in *output.
- */
+//
+// Opens process *cmd and stores output in *output.
+//
 void getcmd(const Block *block, char *output)
 {
 	strcpy(output, block->icon);
@@ -74,16 +73,14 @@ void getcmd(const Block *block, char *output)
 	fgets(output+i, CMDLENGTH-i-delimLen, cmdf);
 	i = strlen(output);
 	if (i == 0) {
-		/* return if block and command output are both empty
-		 */
+		// return if block and command output are both empty
 		pclose(cmdf);
 		return;
 	}
-	/* only chop off newline if one is present at the end */
+	// only chop off newline if one is present at the end
 	i = output[i-1] == '\n' ? i-1 : i;
-	if (delim[0] != '\0') {
+	if (delim[0] != '\0')
 		strncpy(output+i, delim, delimLen); 
-	}
 	else
 		output[i++] = '\0';
 	pclose(cmdf);
@@ -113,7 +110,7 @@ void getsigcmds(unsigned int signal)
 void setupsignals()
 {
 #if !defined(__OpenBSD__) && !defined(__DragonFly__)
-	/* initialize all real time signals with dummy handler */
+	// initialize all real time signals with dummy handler
 	for (int i = SIGRTMIN; i <= SIGRTMAX; i++)
 		signal(i, dummysighandler);
 #endif
@@ -131,14 +128,14 @@ int getstatus(char *str, char *last)
 	for (unsigned int i = 0; i < LENGTH(blocks); i++)
 		strcat(str, statusbar[i]);
 	str[strlen(str)-strlen(delim)] = '\0';
-	return strcmp(str, last); /* 0 if they are the same */
+	return strcmp(str, last); // 0 if they are the same
 }
 
 #ifndef NO_X
 void setroot()
 {
 	if (!getstatus(statusstr[0], statusstr[1])) {
-		/* Only set root if text has changed. */
+		// only set root if text has changed
 		return;
 	}
 	XStoreName(dpy, root, statusstr[0]);
@@ -161,7 +158,7 @@ int setupX()
 void pstdout()
 {
 	if (!getstatus(statusstr[0], statusstr[1])) {
-		/* Only write out if text has changed. */
+		// only write out if text has changed
 		return;
 	}
 	printf("%s\n",statusstr[0]);
@@ -184,9 +181,9 @@ void statusloop()
 }
 
 #ifndef __OpenBSD__
-/*
- * This signal handler should do nothing.
- */
+//
+// This signal handler should do nothing.
+//
 void dummysighandler(int signum)
 {
     return;
@@ -207,7 +204,7 @@ void termhandler()
 int main(int argc, char** argv)
 {
 	for (int i = 0; i < argc; i++) {
-		/* Handle command line arguments. */
+		// handle command line arguments
 		if (!strcmp("-d",argv[i]))
 			strncpy(delim, argv[++i], delimLen);
 		else if (!strcmp("-p",argv[i]))
@@ -228,5 +225,5 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-/* vim:cc=72:tw=70
- * End of file. */
+// vim:cc=72:tw=70
+// End of file.

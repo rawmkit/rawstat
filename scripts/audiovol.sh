@@ -1,5 +1,5 @@
 #!/bin/bash
-# This file is a part of dwmblocks.
+# Display audio volume.
 # See COPYING and COPYRIGHT files for corresponding information.
 
 [ -x /usr/bin/amixer ] || exit 1

@@ -1,5 +1,5 @@
 #!/bin/sh
-# This file is a part of dwmblocks.
+# Display disk free space.
 # See COPYING and COPYRIGHT files for corresponding information.
 
 df -h | awk '/\/boot|root|pkgmk|raid/ {

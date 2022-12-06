@@ -1,5 +1,5 @@
 #!/bin/sh
-# This file is a part of dwmblocks.
+# Display CPU/Memory load.
 # See COPYING and COPYRIGHT files for corresponding information.
 
 mem=$(free -m | awk 'NR == 2 { print int($3*100/$2) }')

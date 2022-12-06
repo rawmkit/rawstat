@@ -1,5 +1,5 @@
 #!/bin/sh
-# This file is a part of dwmblocks.
+# Display battery status.
 # See COPYING and COPYRIGHT files for corresponding information.
 
 BATT=/sys/class/power_supply/BAT0
