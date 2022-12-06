@@ -6,8 +6,9 @@ include config.mk
 
 all: dwmblocks dwmblocks.1
 
-%: %.in
-	sed "s/VERSION/${VERSION}/g" $^ > $@
+%: %.pod
+	podchecker $^
+	pod2man -c ' ' -n dwmblocks -r ${VERSION} $^ > $@
 
 .c.o:
 	${CC} -c ${CFLAGS} ${CPPFLAGS} $<
