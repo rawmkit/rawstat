@@ -23,7 +23,7 @@ install: all
 	cp -f dwmblocks ${DESTDIR}${BINDIR}/
 	chmod +x ${DESTDIR}${PREFIX}/bin/dwmblocks
 	cp -f dwmblocks.1 ${DESTDIR}${MANDIR}/man1/
-	cp -R scripts ${DESTDIR}${DATADIR}/dwmblocks
+	cp scripts/*.sh ${DESTDIR}${DATADIR}/dwmblocks/
 
 uninstall:
 	rm -f  ${DESTDIR}${BINDIR}/dwmblocks
