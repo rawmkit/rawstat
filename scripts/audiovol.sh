@@ -5,10 +5,11 @@
 [ -x /usr/bin/amixer ] || exit 1
 
 if amixer get Master | grep -q off; then
-  printf "%b" "\ufa80"
+  #printf "%b" "\ufa80"
+  echo "-1"
 else
-  printf "%b %i" \
-    "\ufa7d" \
+  #printf "%b %i" "\ufa7d" \
+  echo \
     "$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*\)%\].*/\1/')"
 fi
 
