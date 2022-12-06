@@ -6,9 +6,10 @@ VERSION = 0.1
 # Customize below to fit your system.
 
 # paths
-PREFIX = /usr/local
-MANPREFIX = ${PREFIX}/share/man
-DATAPREFIX = ${PREFIX}/share
+PREFIX  = /usr/local
+BINDIR  = ${PREFIX}/bin
+DATADIR = ${PREFIX}/share
+MANDIR  = ${PREFIX}/share/man
 
 # DragonFly & FreeBSD (comment)
 X11INC = /usr/local/include
@@ -29,6 +30,7 @@ LDFLAGS = ${LIBS}
 
 # compiler and linker
 CC = cc
+LD = ${CC}
 
 # vim:cc=72:tw=70
 # End of file.

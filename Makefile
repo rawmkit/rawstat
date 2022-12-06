@@ -13,18 +13,21 @@ all: dwmblocks dwmblocks.1
 	${CC} -c ${CFLAGS} ${CPPFLAGS} $<
 
 dwmblocks: dwmblocks.o
-	${CC} -o $@ ${LDFLAGS} $^
+	${LD} -o $@ ${LDFLAGS} $^
 
 install: all
-	install -m 0755 -Dt ${DESTDIR}${PREFIX}/bin/      dwmblocks
-	install -m 0644 -Dt ${DESTDIR}${MANPREFIX}/man1/  dwmblocks.1
-	install -m 0755 -Dt ${DESTDIR}${DATAPREFIX}/dwmblocks \
-		scripts/*.sh
+	mkdir -p ${DESTDIR}${BINDIR}
+	mkdir -p ${DESTDIR}${MANDIR}/man1
+	mkdir -p ${DESTDIR}${DATADIR}/dwmblocks
+	cp -f dwmblocks ${DESTDIR}${BINDIR}/
+	chmod +x ${DESTDIR}${PREFIX}/bin/dwmblocks
+	cp -f dwmblocks.1 ${DESTDIR}${MANDIR}/man1/
+	cp -R scripts ${DESTDIR}${DATADIR}/dwmblocks
 
 uninstall:
-	rm -f  ${DESTDIR}${PREFIX}/bin/dwmblocks
-	rm -f  ${DESTDIR}${MANPREFIX}/man1/dwmblocks.1
-	rm -rf ${DESTDIR}${DATAPREFIX}/dwmblocks
+	rm -f  ${DESTDIR}${BINDIR}/dwmblocks
+	rm -f  ${DESTDIR}${MANDIR}/man1/dwmblocks.1
+	rm -rf ${DESTDIR}${DATADIR}/dwmblocks
 
 clean:
 	rm -f dwmblocks dwmblocks.o dwmblocks.1
