@@ -1,9 +1,5 @@
-# See COPYING and COPYRIGHT files for corresponding information.
-
 # dwmblocks version
 VERSION = 0.1
-
-# Customize below to fit your system.
 
 # paths
 PREFIX  = /usr/local
