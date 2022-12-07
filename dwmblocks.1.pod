@@ -32,6 +32,11 @@ Print status bar to stdout.
 
 =back
 
+=head1 CUSTOMIZATION
+
+B<dwmblocks> can be customized by creating a custom F<config.h> and
+(re)compiling the source code.  This keeps it fast, secure and simple.
+
 =head1 SEE ALSO
 
 L<dwm(1)>, L<dmenu(1)>, L<st(1)>
