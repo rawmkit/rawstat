@@ -20,7 +20,7 @@ Dependencies
 Build time:
 - c99 compiler
 - podchecker(1pm) and pod2man(1pm) from perl distribution
-- libX11
+- libX11 (optional, `-DNO_X`)
 
 
 Install
