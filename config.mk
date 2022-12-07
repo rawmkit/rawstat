@@ -1,5 +1,7 @@
+# See LICENSE file for copyright and license details.
+
 # dwmblocks version
-VERSION = 0.1
+VERSION = 0.1zpln
 
 # paths
 PREFIX  = /usr/local
