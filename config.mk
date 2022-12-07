@@ -5,9 +5,7 @@ VERSION = 0.1zpln
 
 # paths
 PREFIX  = /usr/local
-BINDIR  = ${PREFIX}/bin
-DATADIR = ${PREFIX}/share
-MANDIR  = ${PREFIX}/share/man
+MANPREFIX = ${PREFIX}/share/man
 
 # X support (uncomment to disable X11)
 #NO_X  = -DNO_X

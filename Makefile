@@ -13,22 +13,22 @@ all: dwmblocks dwmblocks.1
 .c.o:
 	${CC} -c ${CFLAGS} ${CPPFLAGS} $<
 
+config.h:
+	cp config.def.h config.h
+
+dwmblocks.o: config.h
+
 dwmblocks: dwmblocks.o
-	${LD} -o $@ ${LDFLAGS} $^
+	${LD} $^ ${LDFLAGS} -o $@
 
 install: all
-	mkdir -p ${DESTDIR}${BINDIR}
-	mkdir -p ${DESTDIR}${MANDIR}/man1
-	mkdir -p ${DESTDIR}${DATADIR}/dwmblocks
-	cp -f dwmblocks ${DESTDIR}${BINDIR}/
-	chmod +x ${DESTDIR}${PREFIX}/bin/dwmblocks
-	cp -f dwmblocks.1 ${DESTDIR}${MANDIR}/man1/
-	cp scripts/*.sh ${DESTDIR}${DATADIR}/dwmblocks/
+	mkdir -p ${DESTDIR}${PREFIX}/bin  ${DESTDIR}${MANPREFIX}/man1
+	cp -f dwmblocks   ${DESTDIR}${PREFIX}/bin/
+	cp -f dwmblocks.1 ${DESTDIR}${MANPREFIX}/man1/
 
 uninstall:
-	rm -f  ${DESTDIR}${BINDIR}/dwmblocks
-	rm -f  ${DESTDIR}${MANDIR}/man1/dwmblocks.1
-	rm -rf ${DESTDIR}${DATADIR}/dwmblocks
+	rm -f ${DESTDIR}${PREFIX}/bin/dwmblocks
+	rm -f ${DESTDIR}${MANPREFIX}/man1/dwmblocks.1
 
 clean:
 	rm -f dwmblocks dwmblocks.o dwmblocks.1
