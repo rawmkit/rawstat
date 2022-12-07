@@ -7,6 +7,9 @@ BINDIR  = ${PREFIX}/bin
 DATADIR = ${PREFIX}/share
 MANDIR  = ${PREFIX}/share/man
 
+# X support (uncomment to disable X11)
+#NO_X  = -DNO_X
+
 # DragonFly & FreeBSD (comment)
 X11INC = /usr/local/include
 X11LIB = /usr/local/lib
@@ -20,7 +23,7 @@ INCS = -I${X11INC}
 LIBS = -L${X11LIB} -lX11
 
 # flags
-CPPFLAGS =
+CPPFLAGS = ${NO_X}
 CFLAGS   = -pedantic -Wall -Wextra -Wno-deprecated-declarations
 LDFLAGS  = ${LIBS}
 
