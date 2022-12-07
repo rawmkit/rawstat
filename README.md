@@ -1,10 +1,13 @@
-dwmblocks - modular status bar for dwm
-======================================
-dwm is a tiny but modular status bar for dwm.
+dwmblocks - modular status bar
+==============================
+dwmblocks is a tiny utility for generating a status bar for dwm or
+similar programs.  There is an ability to generate status bar to
+stdout, that may be useful for dvtm(1) ans similar programs.
 
-This dwmblocks distribution is a fork of torrinfail's as of commit
-a933ce0 (Thu Jan 6 2022).  The source code have been adapted to
-compile on DragonFlyBSD.  Added man page.  Added some scripts.
+This dwmblocks distribution is a fork of torrinfail's dwmblocks as of
+commit a933ce0 (Thu Jan 6 2022).  The source code have been adapted to
+compile on DragonFlyBSD.  Added man page.  See git log for complete
+differences.
 
 The original sources can be downloaded from:
 
