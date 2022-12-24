@@ -1,5 +1,3 @@
-# See LICENSE file for copyright and license details.
-
 # dwmblocks version
 VERSION = 0.1zpln
 
@@ -30,6 +28,3 @@ LDFLAGS  = ${LIBS}
 # compiler and linker
 CC = cc
 LD = ${CC}
-
-# vim:cc=72:tw=70
-# End of file.
