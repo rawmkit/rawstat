@@ -4,7 +4,7 @@
 VERSION = 0.1zpln
 
 # paths
-PREFIX  = /usr/local
+PREFIX    = /usr/local
 MANPREFIX = ${PREFIX}/share/man
 
 # X support (uncomment to disable X11)
