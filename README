@@ -16,9 +16,10 @@ ABOUT dwmblocks
 
 REQUIREMENTS
 
+    Build time:
     * c99 compiler
     * POSIX sh(1p), make(1p) and "mandatory utilities"
-    * pod2man(1pm) from perl distribution
+    * pod2man(1pm) from perl distribution to generate man page
     * libX11 (optional, "-DNO_X")
 
 INSTALL
