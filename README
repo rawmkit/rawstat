@@ -24,8 +24,8 @@ REQUIREMENTS
 
 INSTALL
 
-    The shell commands "make && make install" should build and install
-    this package.  See "config.mk" file for configuration parameters.
+    The shell command "make install" should build and install this
+    package.  See "./config.mk" file for configuration parameters.
 
     dwmblocks can be customized by creating a custom "config.h" and
     (re)compiling the source code.
