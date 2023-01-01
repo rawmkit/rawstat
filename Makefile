@@ -4,9 +4,6 @@ include config.mk
 
 all: dwmblocks dwmblocks.1
 
-%: %.pod
-	pod2man -c ' ' -n dwmblocks -r ${VERSION} $^ > $@
-
 .c.o:
 	${CC} -c ${CFLAGS} ${CPPFLAGS} $<
 
@@ -14,6 +11,9 @@ config.h:
 	cp config.def.h config.h
 
 dwmblocks.o: config.h
+
+dwmblocks.1: dwmblocks.1.pod
+	pod2man -c ' ' -n dwmblocks -r ${VERSION} $< > $@
 
 dwmblocks: dwmblocks.o
 	${LD} $^ ${LDFLAGS} -o $@
