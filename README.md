@@ -23,7 +23,6 @@ REQUIREMENTS
 Build time:
   * c99 compiler
   * POSIX sh(1p), make(1p) and "mandatory utilities"
-  * pod2man(1pm) from perl distribution to generate a man page
   * libX11 is optional (disabled by "-DNO_X" flag)
 
 INSTALL
