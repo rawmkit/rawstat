@@ -12,8 +12,8 @@ config.h:
 
 dwmblocks.o: config.h
 
-dwmblocks.1: dwmblocks.1.pod
-	pod2man -c ' ' -n dwmblocks -r ${VERSION} $< > $@
+dwmblocks.1: dwmblocks.1.in
+	sed "s/@VERSION@/${VERSION}/g" $< > $@
 
 dwmblocks: dwmblocks.o
 	${LD} $^ ${LDFLAGS} -o $@
