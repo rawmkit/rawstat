@@ -8,11 +8,11 @@ MANPREFIX = ${PREFIX}/share/man
 # X support (uncomment to disable X11)
 #NO_X  = -DNO_X
 
-# DragonFly & FreeBSD (comment)
+# DragonFly & FreeBSD
 X11INC = /usr/local/include
 X11LIB = /usr/local/lib
 
-# NetBSD, OpenBSD (uncomment)
+# NetBSD, OpenBSD
 #X11INC = /usr/X11R6/include
 #X11LIB = /usr/X11R6/lib
 
