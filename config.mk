@@ -1,5 +1,5 @@
 # dwmblocks version
-VERSION = 0.1zpln
+VERSION = 0.2zpln
 
 # paths
 PREFIX    = /usr/local
