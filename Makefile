@@ -23,6 +23,8 @@ install: all
 	mkdir -p          ${DESTDIR}${MANPREFIX}/man1
 	cp -f dwmblocks   ${DESTDIR}${PREFIX}/bin/
 	cp -f dwmblocks.1 ${DESTDIR}${MANPREFIX}/man1/
+	chmod 0755        ${DESTDIR}${PREFIX}/bin/dwmblocks
+	chmod 0644        ${DESTDIR}${MANPREFIX}/man1/dwmblocks.1
 
 uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/dwmblocks
