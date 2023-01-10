@@ -2,7 +2,6 @@
 config.h
 dwmblocks
 dwmblocks.o
-dwmblocks.1
 
 # vim undo
 .*.un~
