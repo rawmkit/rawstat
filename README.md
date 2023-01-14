@@ -27,8 +27,8 @@ Build time:
 
 INSTALL
 -------
-The shell command `make && make install` should build and install this
-package.  See *config.mk* file for configuration parameters.
+The shell commands `make && make install` should build and install
+this package.  See *config.mk* file for configuration parameters.
 
 dwmblocks can be customized by creating a custom *config.h* file and
 (re)compiling the source code.
@@ -37,7 +37,6 @@ LICENSE
 -------
 *dwmblocks* is licensed through ISC License.
 See *LICENSE* file for copyright and license details.
-
 
 <!-- vim:sw=2:ts=2:sts=2:et:cc=72:tw=70
 End of file. -->
