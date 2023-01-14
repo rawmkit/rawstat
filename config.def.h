@@ -1,11 +1,11 @@
-// dwmblocks configuration.
+// dwmblocks customization.
 // See LICENSE file for copyright and license details.
 
 // Modify this file to change what commands output to your statusbar,
 // and recompile using the make command.
 static const Block blocks[] = {
-// Icon   Command                       Update Interval   Update Signal
-  {"",    "date '+%b %d (%a) %H:%M'",   5,                0},
+// Icon   Command                      Update Interval   Update Signal
+  {"",    "date '+%b %d (%a) %H:%M'",  5,                0},
 };
 
 // Sets delimiter between status commands.
