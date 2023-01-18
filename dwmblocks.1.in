@@ -1,6 +1,6 @@
 .\" See LICENSE file for copyright and license details.
 
-.TH DWMBLOCKS 1 dwmblocks\-@VERSION@
+.TH DWMBLOCKS 1 "January 2023" "dwmblocks @VERSION@"
 
 .SH NAME
 dwmblocks \- modular status bar for dwm or similar programs
