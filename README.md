@@ -11,7 +11,7 @@ of commit a933ce0 (Thu Jan 6 2022) with the following differences:
   * added a man page
   * the source code has been adapted to suckless style
 
-See git log for further differences.
+See git log for complete/further differences.
 
 The original sources can be downloaded from:
   1. https://github.com/torrinfail/dwmblocks
