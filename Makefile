@@ -10,13 +10,13 @@ all: dwmblocks dwmblocks.1
 config.h:
 	cp config.def.h config.h
 
+dwmblocks.1:
+	sed "s/@VERSION@/${VERSION}/g" dwmblocks.1.in > $@
+
 dwmblocks.o: config.h
 
 dwmblocks: dwmblocks.o
 	${LD} $^ ${LDFLAGS} -o $@
-
-dwmblocks.1: dwmblocks.1.in
-	sed "s/@VERSION@/${VERSION}/g" $< > $@
 
 install: all
 	mkdir -p          ${DESTDIR}${PREFIX}/bin/
