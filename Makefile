@@ -16,7 +16,7 @@ dwmblocks.1:
 dwmblocks.o: config.h
 
 dwmblocks: dwmblocks.o
-	${LD} $^ ${LDFLAGS} -o $@
+	${LD} dwmblocks.o ${LDFLAGS} -o $@
 
 install: all
 	mkdir -p          ${DESTDIR}${PREFIX}/bin/
