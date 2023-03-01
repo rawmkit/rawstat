@@ -8,7 +8,7 @@ all: dwmblocks dwmblocks.1
 	${CC} -c ${CFLAGS} ${CPPFLAGS} $<
 
 config.h:
-	cp config.def.h config.h
+	cp config.def.h $@
 
 dwmblocks.1:
 	sed "s/@VERSION@/${VERSION}/g" dwmblocks.1.in > $@
