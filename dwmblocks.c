@@ -31,9 +31,9 @@ typedef struct {
 } Block;
 
 #ifndef __OpenBSD__
-void dummysighandler(int num);
+void dummysighandler(int signum);
 #endif
-void sighandler(int num);
+void sighandler(int signum);
 void getcmds(int time);
 void getsigcmds(unsigned int signal);
 void setupsignals();
