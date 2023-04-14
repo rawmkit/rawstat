@@ -6,6 +6,10 @@
 #include <unistd.h>
 #include <signal.h>
 
+/*********************************************************************
+ * Macros.
+ */
+
 #ifndef NO_X
 # include <X11/Xlib.h>
 #endif
@@ -23,12 +27,20 @@
 #define MIN(a, b)	((a < b) ? a : b)
 #define STATUSLENGTH	(LENGTH(blocks) * CMDLENGTH + 1)
 
+/*********************************************************************
+ * Enums & Typedefs.
+ */
+
 typedef struct {
 	char* icon;
 	char* command;
 	unsigned int interval;
 	unsigned int signal;
 } Block;
+
+/*********************************************************************
+ * Function declarations.
+ */
 
 #ifndef __OpenBSD__
 void dummysighandler(int signum);
@@ -53,12 +65,20 @@ static Window root;
 static void (*writestatus) () = pstdout;
 #endif
 
+/*********************************************************************
+ * Global variables.
+ */
+
 #include "config.h"
 
 static char statusbar[LENGTH(blocks)][CMDLENGTH] = {0};
 static char statusstr[2][STATUSLENGTH];
 static int statusContinue = 1;
 static int returnStatus = 0;
+
+/*********************************************************************
+ * Function implementations.
+ */
 
 /*
  * Opens process *cmd and stores output in *output.
