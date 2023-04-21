@@ -1,5 +1,7 @@
-# dwmblocks version
+# project metadata
+NAME = dwmblocks
 VERSION = 0.2zpln
+DIST = ${NAME}-${VERSION}
 
 # paths
 PREFIX    = /usr/local
