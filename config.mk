@@ -1,6 +1,6 @@
 # project metadata
 NAME = dwmblocks
-VERSION = 0.2zpln
+VERSION = 0.2z1
 DIST = ${NAME}-${VERSION}
 
 # paths
