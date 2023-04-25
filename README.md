@@ -1,11 +1,12 @@
 OVERVIEW
 --------
-This directory contains dwmblocks, a tiny utility for generating a status bar
-for dwm or similar programs.  There is an ability to generate status bar to
-stdout, that may be useful for dvtm(1) and similar programs.
+This directory contains dwmblocks, a tiny utility for generating a
+status bar for dwm or similar programs.  There is an ability to
+generate status bar to stdout, that may be useful for dvtm(1) and
+similar programs.
 
-This distribution is a fork of torrinfail's dwmblocks as of commit a933ce0 (Thu
-Jan 6 2022) with the following differences:
+This distribution is a fork of torrinfail's dwmblocks as of commit
+a933ce0 (Thu Jan 6 2022) with the following differences:
 - fixed compilation on DragonFlyBSD
 - added a man page
 - the source code has been adapted to suckless style
@@ -27,8 +28,8 @@ REQUIREMENTS
 
 INSTALL
 -------
-The shell commands `make && make install` should build and install this
-package.  See `config.mk` file for configuration parameters.
+The shell commands `make && make install` should build and install
+this package.  See `config.mk` file for configuration parameters.
 
 dwmblocks can be customized by creating a custom `config.h` file and
 (re)compiling the source code.
