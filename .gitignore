@@ -6,3 +6,9 @@ dwmblocks.1
 
 # vim undo
 .*.un~
+
+# backup files
+*.bak
+
+# tarballs
+*.tar.gz
