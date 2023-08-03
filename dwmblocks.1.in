@@ -22,7 +22,7 @@ The status bar is made from text output from command-line programs.
 Blocks are added and removed by editing config.h file.
 
 .SH OPTIONS
-.TP
+.TP 9
 .BI \-d DELIM
 Set blocks delimiter.
 .TP
