@@ -6,9 +6,7 @@
 dwmblocks \- modular status bar for dwm or similar programs
 
 .SH SYNOPSIS
-.B dwmblocks
-.RB [ -d \fIDELIM\fR]
-.RB [ -p ]
+.B dwmblocks [\fB-d\fR \fIDELIM\fR] [\fB-p\fR]
 
 .SH DESCRIPTION
 .B dwmblocks
@@ -22,11 +20,11 @@ The status bar is made from text output from command-line programs.
 Blocks are added and removed by editing config.h file.
 
 .SH OPTIONS
-.TP 9
-.BI \-d DELIM
+.TP 10
+\fB-d\fR \fIDELIM\fR
 Set blocks delimiter.
 .TP
-.B \-p
+\fB-p\fR
 Print status bar to stdout.
 
 .SH CUSTOMIZATION
