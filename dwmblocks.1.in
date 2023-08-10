@@ -1,38 +1,40 @@
-.\" See LICENSE file for copyright and license details.
-
-.TH DWMBLOCKS 1 "January 2023" "dwmblocks @VERSION@"
-
-.SH NAME
-dwmblocks \- modular status bar for dwm or similar programs
-
-.SH SYNOPSIS
-.B dwmblocks [\fB-d\fR \fIDELIM\fR] [\fB-p\fR]
-
-.SH DESCRIPTION
-.B dwmblocks
+.Dd August 11, 2023
+.Dt DWMBLOCKS 1
+.Os dwmblocks @VERSION@
+.Sh NAME
+.Nm dwmblocks
+.Nd modular status bar for dwm or similar programs
+.Sh SYNOPSIS
+.Nm
+.Op Fl d Ar delim
+.Op Fl p
+.Sh DESCRIPTION
+.Nm
 is a tiny utility for generating a status bar for dwm or similar
 programs.  There is an ability to generate status bar to stdout,
 that may be useful for
-.BR dvtm (1)
+.Xr dvtm 1
 and similar programs.
-.P
+.Pp
 The status bar is made from text output from command-line programs.
-Blocks are added and removed by editing config.h file.
-
-.SH OPTIONS
-.TP 10
-\fB-d\fR \fIDELIM\fR
+Blocks are added and removed by editing
+.Pa config.h
+file.
+.Sh OPTIONS
+The following options are available:
+.Bl -tag -width XXXXXXXX
+.It Fl d Ar delim
 Set blocks delimiter.
-.TP
-\fB-p\fR
+.It Fl p
 Print status bar to stdout.
-
-.SH CUSTOMIZATION
-.B dwmblocks
-can be customized by creating a custom config.h and (re)compiling the
-source code.  This keeps it fast, secure and simple.
-
-.SH SEE ALSO
-.BR dwm (1),
-.BR dmenu (1),
-.BR st (1)
+.El
+.Sh CUSTOMIZATION
+.Nm
+can be customized by creating a custom
+.Pa config.h
+and (re)compiling the source code.
+This keeps it fast, secure and simple.
+.Sh SEE ALSO
+.Xr dwm 1 ,
+.Xr dmenu 1 ,
+.Xr st 1
