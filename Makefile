@@ -2,18 +2,10 @@
 
 include config.mk
 
-all: dwmblocks
-
-.c.o:
-	${CC} -c ${CFLAGS} ${CPPFLAGS} $<
+all: config.h dwmblocks
 
 config.h:
 	cp config.def.h $@
-
-dwmblocks.o: config.h
-
-dwmblocks: dwmblocks.o
-	${LD} dwmblocks.o ${LDFLAGS} -o $@
 
 install: all
 	mkdir -p          ${DESTDIR}${PREFIX}/bin/
