@@ -15,9 +15,6 @@ dwmblocks.o: config.h
 dwmblocks: dwmblocks.o
 	${LD} dwmblocks.o ${LDFLAGS} -o $@
 
-dwmblocks.1:
-	sed "s/@VERSION@/${VERSION}/g" dwmblocks.1.in > $@
-
 install: all
 	mkdir -p          ${DESTDIR}${PREFIX}/bin/
 	mkdir -p          ${DESTDIR}${MANPREFIX}/man1
