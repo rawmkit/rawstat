@@ -9,7 +9,7 @@ This distribution is a fork of torrinfail's dwmblocks as of commit
 a933ce0 (Thu Jan 6 2022) with the following differences:
 - fix compilation on DragonFlyBSD
 - add dwmblocks.1 man page
-- suckless style
+- suckless style build
 
 See git log for complete/further differences.
 
