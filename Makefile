@@ -2,7 +2,7 @@
 
 include config.mk
 
-all: dwmblocks dwmblocks.1
+all: dwmblocks
 
 .c.o:
 	${CC} -c ${CFLAGS} ${CPPFLAGS} $<
@@ -22,7 +22,8 @@ install: all
 	mkdir -p          ${DESTDIR}${PREFIX}/bin/
 	mkdir -p          ${DESTDIR}${MANPREFIX}/man1
 	cp -f dwmblocks   ${DESTDIR}${PREFIX}/bin/
-	cp -f dwmblocks.1 ${DESTDIR}${MANPREFIX}/man1/
+	sed "s/@VERSION@/${VERSION}/g" dwmblocks.1 > \
+	                  ${DESTDIR}${MANPREFIX}/man1/dwmblocks.1
 	chmod 0755        ${DESTDIR}${PREFIX}/bin/dwmblocks
 	chmod 0644        ${DESTDIR}${MANPREFIX}/man1/dwmblocks.1
 
@@ -31,7 +32,7 @@ uninstall:
 	rm -f ${DESTDIR}${MANPREFIX}/man1/dwmblocks.1
 
 clean:
-	rm -f dwmblocks dwmblocks.o dwmblocks.1
+	rm -f dwmblocks dwmblocks.o
 	rm -f ${DIST}.tar.gz
 
 dist: clean
