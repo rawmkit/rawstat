@@ -93,8 +93,7 @@ void getcmd(const Block *block, char *output)
 	fgets(output+i, CMDLENGTH-i-delimLen, cmdf);
 	i = strlen(output);
 	if (i == 0) {
-		/* return if block and command output are both empty
-		 */
+		/* return if block and command output are both empty */
 		pclose(cmdf);
 		return;
 	}
@@ -246,5 +245,5 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-/* vim:cc=72:tw=70
+/* vim: cc=72 tw=70
  * End of file. */
