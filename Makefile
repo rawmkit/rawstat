@@ -21,7 +21,7 @@ uninstall:
 	rm -f ${DESTDIR}${MANPREFIX}/man1/dwmblocks.1
 
 clean:
-	rm -f dwmblocks dwmblocks.o
+	rm -f dwmblocks
 	rm -f ${DIST}.tar.gz
 
 dist: clean
