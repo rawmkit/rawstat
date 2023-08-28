@@ -28,5 +28,5 @@ LIBS      = -L${X11LIB} -lX11
 
 # flags
 CFLAGS    = -pedantic -Wall -Wextra -Wno-deprecated-declarations \
-	    ${NO_X} ${INCS}
+	    -D_DEFAULT_SOURCE ${NO_X} ${INCS}
 LDFLAGS   = ${LIBS}
