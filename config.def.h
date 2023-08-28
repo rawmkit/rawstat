@@ -1,13 +1,12 @@
 /* dwmblocks customization.
  * See LICENSE file for copyright and license details. */
 
-/* 
- * Increase statusbar output if needed.
- */
 /*
-#define CMDLENGTH 50
-#define STATUSLENGTH (LENGTH(blocks) * CMDLENGTH + 1)
-*/
+ * CMDLENGTH is a maximum possible length of output from block,
+ * expressed in number of characters.  Declare it if need to increase
+ * the default length.
+ */
+/*#define CMDLENGTH 50*/
 
 /*
  * Modify this file to change what commands output to your statusbar,
