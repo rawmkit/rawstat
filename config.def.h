@@ -1,6 +1,14 @@
 /* dwmblocks customization.
  * See LICENSE file for copyright and license details. */
 
+/* 
+ * Increase statusbar output if needed.
+ */
+/*
+#define CMDLENGTH 50
+#define STATUSLENGTH (LENGTH(blocks) * CMDLENGTH + 1)
+*/
+
 /*
  * Modify this file to change what commands output to your statusbar,
  * and recompile using the make command.
