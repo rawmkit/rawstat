@@ -30,7 +30,3 @@ LIBS      = -L${X11LIB} -lX11
 CFLAGS    = -pedantic -Wall -Wextra -Wno-deprecated-declarations \
 	    ${NO_X} ${INCS}
 LDFLAGS   = ${LIBS}
-
-# compiler and linker
-CC        = cc
-LD        = ${CC}
