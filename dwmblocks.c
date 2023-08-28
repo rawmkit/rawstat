@@ -23,9 +23,7 @@
 #endif
 
 #define LENGTH(X)     (sizeof(X) / sizeof(X[0]))
-#define CMDLENGTH     50
 #define MIN(a, b)     ((a < b) ? a : b)
-#define STATUSLENGTH  (LENGTH(blocks) * CMDLENGTH + 1)
 
 /*********************************************************************
  * Enums & Typedefs.
@@ -70,6 +68,14 @@ static void (*writestatus) () = pstdout;
  */
 
 #include "config.h"
+
+/* Allow the following macro be redefined from config.h */
+#ifndef CMDLENGTH
+#define CMDLENGTH     50
+#endif
+#ifndef STATUSLENGTH
+#define STATUSLENGTH  (LENGTH(blocks) * CMDLENGTH + 1)
+#endif
 
 static char statusbar[LENGTH(blocks)][CMDLENGTH] = {0};
 static char statusstr[2][STATUSLENGTH];
