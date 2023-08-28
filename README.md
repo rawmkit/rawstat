@@ -1,9 +1,9 @@
 OVERVIEW
 --------
-This directory contains dwmblocks, a tiny utility for generating a
-status bar for dwm or similar programs.  There is an ability to
-generate status bar to stdout, that may be useful for dvtm(1) and
-similar programs.
+This directory contains dwmblocks, a tiny utility that generates a
+status bar for dwm(1) or similar programs.  There is an ability to
+generate status bar to stdout, that may be useful for dvtm(1),
+screen(1) and similar programs.
 
 This distribution is a fork of torrinfail's dwmblocks as of commit
 a933ce0 (Thu Jan 6 2022) with the following differences:
@@ -21,7 +21,7 @@ The original sources can be downloaded from:
 REQUIREMENTS
 ------------
 **Build time**:
-- c99 compiler
+- C99 compiler
 - POSIX sh(1p), make(1p) and "mandatory utilities"
 - libX11 (optional)
 
