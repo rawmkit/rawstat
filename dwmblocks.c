@@ -71,10 +71,10 @@ static void (*writestatus) () = pstdout;
 
 /* Allow the following macro be redefined from config.h */
 #ifndef CMDLENGTH
-#define CMDLENGTH     50
+# define CMDLENGTH     50
 #endif
 #ifndef STATUSLENGTH
-#define STATUSLENGTH  (LENGTH(blocks) * CMDLENGTH + 1)
+# define STATUSLENGTH  (LENGTH(blocks) * CMDLENGTH + 1)
 #endif
 
 static char statusbar[LENGTH(blocks)][CMDLENGTH] = {0};
