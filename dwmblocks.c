@@ -89,7 +89,8 @@ static int returnStatus = 0;
 /*
  * Opens process *cmd and stores output in *output.
  */
-void getcmd(const Block *block, char *output)
+void
+getcmd(const Block *block, char *output)
 {
 	strcpy(output, block->icon);
 	FILE *cmdf = popen(block->command, "r");
@@ -112,7 +113,8 @@ void getcmd(const Block *block, char *output)
 	pclose(cmdf);
 }
 
-void getcmds(int time)
+void
+getcmds(int time)
 {
 	const Block* current;
 	for (unsigned int i = 0; i < LENGTH(blocks); i++) {
@@ -123,7 +125,8 @@ void getcmds(int time)
 	}
 }
 
-void getsigcmds(unsigned int signal)
+void
+getsigcmds(unsigned int signal)
 {
 	const Block *current;
 	for (unsigned int i = 0; i < LENGTH(blocks); i++) {
@@ -133,7 +136,8 @@ void getsigcmds(unsigned int signal)
 	}
 }
 
-void setupsignals()
+void
+setupsignals()
 {
 #if !defined(__OpenBSD__) && !defined(__DragonFly__)
 	/* initialize all real time signals with dummy handler */
@@ -147,7 +151,8 @@ void setupsignals()
 	}
 }
 
-int getstatus(char *str, char *last)
+int
+getstatus(char *str, char *last)
 {
 	strcpy(last, str);
 	str[0] = '\0';
@@ -158,7 +163,8 @@ int getstatus(char *str, char *last)
 }
 
 #ifndef NO_X
-void setroot()
+void
+setroot()
 {
 	if (!getstatus(statusstr[0], statusstr[1])) {
 		/* only set root if text has changed */
@@ -168,7 +174,8 @@ void setroot()
 	XFlush(dpy);
 }
 
-int setupX()
+int
+setupX()
 {
 	dpy = XOpenDisplay(NULL);
 	if (!dpy) {
@@ -181,7 +188,8 @@ int setupX()
 }
 #endif
 
-void pstdout()
+void
+pstdout()
 {
 	if (!getstatus(statusstr[0], statusstr[1])) {
 		/* only write out if text has changed */
@@ -192,7 +200,8 @@ void pstdout()
 }
 
 
-void statusloop()
+void
+statusloop()
 {
 	setupsignals();
 	int i = 0;
@@ -210,30 +219,34 @@ void statusloop()
 /*
  * This signal handler should do nothing.
  */
-void dummysighandler(int signum)
+void
+dummysighandler(int signum)
 {
     return;
 }
 #endif
 
-void sighandler(int signum)
+void
+sighandler(int signum)
 {
 	getsigcmds(signum-SIGPLUS);
 	writestatus();
 }
 
-void termhandler()
+void
+termhandler()
 {
 	statusContinue = 0;
 }
 
-int main(int argc, char** argv)
+int
+main(int argc, char** argv)
 {
 	for (int i = 0; i < argc; i++) {
 		/* handle command line arguments */
-		if (!strcmp("-d",argv[i]))
+		if (!strcmp("-d", argv[i]))
 			strncpy(delim, argv[++i], delimLen);
-		else if (!strcmp("-p",argv[i]))
+		else if (!strcmp("-p", argv[i]))
 			writestatus = pstdout;
 	}
 #ifndef NO_X
