@@ -121,7 +121,7 @@ getcmds(int time)
 		current = blocks + i;
 		if ((current->interval != 0 &&
 		     time % current->interval == 0) || time == -1)
-			getcmd(current,statusbar[i]);
+			getcmd(current, statusbar[i]);
 	}
 }
 
@@ -132,7 +132,7 @@ getsigcmds(unsigned int signal)
 	for (unsigned int i = 0; i < LENGTH(blocks); i++) {
 		current = blocks + i;
 		if (current->signal == signal)
-			getcmd(current,statusbar[i]);
+			getcmd(current, statusbar[i]);
 	}
 }
 
@@ -147,7 +147,7 @@ setupsignals()
 
 	for (unsigned int i = 0; i < LENGTH(blocks); i++) {
 		if (blocks[i].signal > 0)
-			signal(SIGMINUS+blocks[i].signal, sighandler);
+			signal(SIGMINUS + blocks[i].signal, sighandler);
 	}
 }
 
@@ -158,7 +158,7 @@ getstatus(char *str, char *last)
 	str[0] = '\0';
 	for (unsigned int i = 0; i < LENGTH(blocks); i++)
 		strcat(str, statusbar[i]);
-	str[strlen(str)-strlen(delim)] = '\0';
+	str[strlen(str) - strlen(delim)] = '\0';
 	return strcmp(str, last); /* 0 if they are the same */
 }
 
@@ -195,7 +195,7 @@ pstdout()
 		/* only write out if text has changed */
 		return;
 	}
-	printf("%s\n",statusstr[0]);
+	printf("%s\n", statusstr[0]);
 	fflush(stdout);
 }
 
