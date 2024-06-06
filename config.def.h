@@ -16,7 +16,7 @@ static const Block blocks[] = {
 /*
  * Icon  Command                      Update Interval  Update Signal
  */
-  {"",   "date '+%b %d (%a) %H:%M'",  5,               0},
+  {"",   "date '+%a %b %d %H:%M'",    5,               0},
 };
 
 /*
