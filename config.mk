@@ -27,6 +27,7 @@ INCS      = -I${X11INC}
 LIBS      = -L${X11LIB} -lX11
 
 # flags
+CPPFLAGS  = -D_DEFAULT_SOURCE ${NO_X}
 CFLAGS    = -pedantic -Wall -Wextra -Wno-deprecated-declarations \
-	    -D_DEFAULT_SOURCE ${NO_X} ${INCS}
+            ${CPPFLAGS} ${INCS}
 LDFLAGS   = ${LIBS}
