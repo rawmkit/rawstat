@@ -80,7 +80,6 @@ static void (*writestatus) () = pstdout;
 static char statusbar[LENGTH(blocks)][CMDLENGTH] = {0};
 static char statusstr[2][STATUSLENGTH];
 static int statusContinue = 1;
-static int returnStatus = 0;
 
 /*********************************************************************
  * Function implementations.
@@ -166,10 +165,10 @@ getstatus(char *str, char *last)
 void
 setroot()
 {
-	if (!getstatus(statusstr[0], statusstr[1])) {
-		/* only set root if text has changed */
+	/* only set root if text has changed */
+	if (!getstatus(statusstr[0], statusstr[1]))
 		return;
-	}
+
 	XStoreName(dpy, root, statusstr[0]);
 	XFlush(dpy);
 }
@@ -177,24 +176,23 @@ setroot()
 int
 setupX()
 {
-	dpy = XOpenDisplay(NULL);
-	if (!dpy) {
-		fprintf(stderr, "dwmblocks: Failed to open display\n");
-		return 0;
+	if (!(dpy = XOpenDisplay(NULL))) {
+		fprintf(stderr, "dwmblocks: cannot open display\n");
+		return 1;
 	}
 	screen = DefaultScreen(dpy);
 	root = RootWindow(dpy, screen);
-	return 1;
+	return 0;
 }
 #endif
 
 void
 pstdout()
 {
-	if (!getstatus(statusstr[0], statusstr[1])) {
-		/* only write out if text has changed */
+	/* only write out if text has changed */
+	if (!getstatus(statusstr[0], statusstr[1]))
 		return;
-	}
+
 	printf("%s\n", statusstr[0]);
 	fflush(stdout);
 }
@@ -220,7 +218,7 @@ statusloop()
  * This signal handler should do nothing.
  */
 void
-dummysighandler(int signum)
+dummysighandler(__attribute__((unused))int signum)
 {
     return;
 }
@@ -250,8 +248,8 @@ main(int argc, char** argv)
 			writestatus = pstdout;
 	}
 #ifndef NO_X
-	if (!setupX())
-		return 1;
+	if (setupX() > 0)
+		return EXIT_FAILURE;
 #endif
 	delimLen = MIN(delimLen, strlen(delim));
 	delim[delimLen++] = '\0';
@@ -261,7 +259,7 @@ main(int argc, char** argv)
 #ifndef NO_X
 	XCloseDisplay(dpy);
 #endif
-	return 0;
+	return EXIT_SUCCESS;
 }
 
 /* vim: cc=72 tw=70
