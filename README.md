@@ -1,10 +1,10 @@
 OVERVIEW
 ========
 
-This directory contains dwmblocks, a tiny utility that generates a
+This repository contains dwmblocks, a tiny utility that generates a
 status bar for dwm(1) or similar programs.  There is an ability to
-generate status bar to stdout, that may be useful for dvtm(1), screen(1)
-and similar programs.
+generate status bar to stdout, that may be useful for dvtm(1),
+screen(1) and similar programs.
 
 This distribution is a fork of torrinfail's dwmblocks as of commit
 a933ce0 (Thu Jan 6 2022) with the following differences:
@@ -32,8 +32,8 @@ Build time
 INSTALL
 =======
 
-The shell commands `make && make install` should build and install this
-package.
+The shell commands `make && make install` should build and install
+this package.
 
 See `config.mk` file for configuration parameters.
 
