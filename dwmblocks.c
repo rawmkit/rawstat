@@ -6,13 +6,13 @@
 #include <unistd.h>
 #include <signal.h>
 
-/*********************************************************************
- * Macros.
- */
-
 #ifndef NO_X
 # include <X11/Xlib.h>
 #endif
+
+/*********************************************************************
+ * Macros.
+ */
 
 #if defined(__OpenBSD__) || defined(__DragonFly__)
 # define SIGPLUS      SIGUSR1+1
