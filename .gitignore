@@ -1,6 +1,8 @@
 # build files and artefacts
 config.h
-dwmblocks
+rawstat
+rawstat.o
+rawstat.1
 
 # vim undo and swap files
 .*.un~
