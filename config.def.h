@@ -1,4 +1,4 @@
-/* dwmblocks customization.
+/* rawstat customization.
  * See LICENSE file for copyright and license details. */
 
 /*
