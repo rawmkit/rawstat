@@ -1,7 +1,6 @@
 # project metadata
-NAME      = dwmblocks
-VERSION   = 0.2z3
-DIST      = ${NAME}-${VERSION}
+NAME      = rawstat
+VERSION   = 0.1
 
 # paths
 PREFIX    = /usr/local
