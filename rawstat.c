@@ -179,7 +179,7 @@ int
 setupX()
 {
 	if (!(dpy = XOpenDisplay(NULL))) {
-		fprintf(stderr, "dwmblocks: cannot open display\n");
+		fprintf(stderr, "rawstat: cannot open display\n");
 		return 1;
 	}
 	screen = DefaultScreen(dpy);
